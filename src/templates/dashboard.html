@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymBeam Assistant</title>
+    <link rel="stylesheet" href="static/styles/common.css">
+    <link rel="stylesheet" href="static/styles/dashboard.css">
+
+</head>
+<body>
+<div class="menu">
+    <button class="mui-btn" id="logoutBtn">Logout</button>
+</div>
+
+<!-- Форма опитування про здоров'я з відступами -->
+<div class="survey-container" id="surveyContainer">
+    <h2>Health Survey</h2>
+    <form id="healthSurveyForm">
+        <label for="gender">1. Gender</label>
+        <select id="gender" title="1. Gender" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="exerciseFrequency">2. How often do you exercise per week?</label>
+        <select id="exerciseFrequency" title="2. How often do you exercise per week?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="0">Never</option>
+            <option value="1-2">1-2 times</option>
+            <option value="3-5">3-5 times</option>
+            <option value="6+">6 or more times</option>
+        </select>
+
+        <label for="dietType">3. Do you follow a specific diet?</label>
+        <select id="dietType" title="3. Do you follow a specific diet?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="None">None</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Keto">Keto</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="waterIntake">4. How much water do you drink per day (in liters)?</label>
+        <input type="number" id="waterIntake" title="4. How much water do you drink per day (in liters)?" min="0" max="10" step="0.1" required placeholder="Enter amount">
+        
+        <label for="chronicConditions">5. Do you have any chronic health conditions?</label>
+        <select id="chronicConditions" title="5. Do you have any chronic health conditions?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="None">None</option>
+            <option value="Diabetes">Diabetes</option>
+            <option value="Hypertension">Hypertension</option>
+            <option value="Asthma">Asthma</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label for="sleepHours">6. How many hours do you sleep on average per night?</label>
+        <input type="number" id="sleepHours" title="6. How many hours do you sleep on average per night?" min="0" max="12" step="1" required placeholder="Enter hours">
+        
+        <label for="healthRating">7. How would you rate your overall health?</label>
+        <select id="healthRating" title="7. How would you rate your overall health?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Fair">Fair</option>
+            <option value="Poor">Poor</option>
+        </select>
+
+        <label for="stressFrequency">8. How often do you feel stressed?</label>
+        <select id="stressFrequency" title="8. How often do you feel stressed?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Rarely">Rarely</option>
+            <option value="Sometimes">Sometimes</option>
+            <option value="Often">Often</option>
+            <option value="Always">Always</option>
+        </select>
+
+        <label for="smokeStatus">9. Do you smoke?</label>
+        <select id="smokeStatus" title="9. Do you smoke?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="No">No</option>
+            <option value="Yes, occasionally">Yes, occasionally</option>
+            <option value="Yes, regularly">Yes, regularly</option>
+            <option value="I quit">I quit</option>
+        </select>
+
+        <label for="alcoholConsumption">10. Do you consume alcohol?</label>
+        <select id="alcoholConsumption" title="10. Do you consume alcohol?" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="No">No</option>
+            <option value="Occasionally">Occasionally</option>
+            <option value="Regularly">Regularly</option>
+        </select>
+
+        <button type="submit" class="mui-btn">Submit Survey</button>
+    </form>
+</div>
+
+<!-- Основний контент сторінки, який з'являється після опитування -->
+<div class="chat-input-container hidden" id="chatInputContainer">
+    <textarea id="chatInput" placeholder="Write your message..." maxlength="1000"></textarea>
+    <div id="charCountInside" class="char-count-inside">0/1000</div>
+    <div class="submit-area">
+        <button class="mui-btn check-btn" id="submitBtn">&#10003; Submit</button>
+    </div>
+</div>
+
+<div class="assistant-container hidden" id="assistantContainer">
+    <div class="assistant-title">GymBeam Assistant:</div>
+    <div class="assistant-chat" id="assistantChat">
+        <div class="user-prompt">User: Hi, what can you help me with?</div>
+        <div class="assistant-response">Assistant: Hello! I can help you with product recommendations, order tracking, and much more. How can I assist you today?</div>
+    </div>
+</div>
+
+<script src="scripts/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+.survey-container {
+    width: 100%;
+    max-width: 550px;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 340px;
+    border: 2px solid #00bcd4;
+    box-sizing: border-box;
+}
+
+.survey-container h2 {
+    text-align: center;
+    color: #00bcd4;
+    margin-bottom: 20px;
+}
+
+.survey-container label {
+    margin-bottom: 10px;
+    display: block;
+    color: #fff;
+}
+
+.survey-container input, .survey-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #333;
+    border: 2px solid #00bcd4;
+    color: #fff;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.assistant-container {
+    width: 100%;
+    max-width: 600px;
+    background-color: #222;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #00bcd4;
+}
+
+.assistant-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.assistant-chat {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 300px;
+    overflow-y: auto;
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.user-prompt, .assistant-response {
+    margin-bottom: 20px;
+}
+
+.user-prompt {
+    color: #ffeb3b;
+}
+
+.assistant-response {
+    color: #00bcd4;
+}
