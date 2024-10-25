@@ -1,0 +1,148 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    color: #00bcd4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 20px;
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
+
+.menu {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.mui-btn {
+    background-color: transparent;
+    color: #00bcd4;
+    border: 2px solid #00bcd4;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 10px;
+    font-size: 18px;
+    border-radius: 15px;
+    transition: background-color 0.3s, transform 0.1s ease;
+}
+
+.mui-btn:hover {
+    background-color: #00bcd4;
+    color: #333;
+}
+
+.mui-btn:active {
+    transform: scale(0.98);
+}
+
+input, textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #444;
+    border: none;
+    color: #fff;
+    border: 2px solid #00bcd4;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+textarea {
+    height: 100px;
+    background-color: #222;
+    resize: none;
+}
+
+.chat-input-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.chat-input-container.inactive {
+    opacity: 0.5;
+}
+
+.char-count-inside {
+    color: #00bcd4;
+    text-align: right;
+    width: 100%;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.close {
+    color: #ff9800;
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 353.5px;
+    height: auto;
+}
+
+/* Smooth animation for modals */
+.modal {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    animation: fadeIn 0.5s ease;
+}
+
+.modal[style*="display: flex"] {
+    display: flex;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+input {
+    padding-left: 30px; /* Для іконок */
+    position: relative;
+}
+
+input::before {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
