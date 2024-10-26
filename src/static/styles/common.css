@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #333;
-    color: #00bcd4;
+    background-color:white;
+    color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,12 +20,12 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 20px;
+    gap: 10px;
 }
 
 .mui-btn {
-    background-color: transparent;
-    color: #00bcd4;
-    border: 2px solid #00bcd4;
+    color: gray;
+    border: 2px solid lightgray;
     padding: 10px 20px;
     cursor: pointer;
     margin: 10px;
@@ -35,8 +35,8 @@ body {
 }
 
 .mui-btn:hover {
-    background-color: #00bcd4;
-    color: #333;
+    background-color: rgba(255,68,16,255);
+    color: rgb(255, 255, 255);
 }
 
 .mui-btn:active {
@@ -50,7 +50,7 @@ input, textarea {
     background-color: #444;
     border: none;
     color: #fff;
-    border: 2px solid #00bcd4;
+    border: 2px solid lightgray;
     border-radius: 15px;
     font-size: 16px;
 }
@@ -75,7 +75,7 @@ textarea {
 }
 
 .char-count-inside {
-    color: #00bcd4;
+    color: lightgray;
     text-align: right;
     width: 100%;
     font-size: 18px;
@@ -97,6 +97,7 @@ textarea {
 .logo {
     width: 353.5px;
     height: auto;
+    margin-top: 20px;
 }
 
 /* Smooth animation for modals */
@@ -145,4 +146,15 @@ input::before {
     left: 10px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+/* Center the logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.chat-container {
+    margin-top: 20px; /* Adjust space between header and chat */
 }

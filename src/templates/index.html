@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="static/styles/index.css">
     <link rel="stylesheet" href="static/styles/common.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@2.2.9/dist/purify.min.js"></script>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -27,18 +28,18 @@
     />
 </head>
 <body>
-<div class="menu">
-    <button class="mui-btn" id="loginBtn">Login</button>
-    <button class="mui-btn" id="registerBtn">Register</button>
-</div>
-
-<div class="logo-container">
-    <img src="static/assets/GB_Logo_Energy_sk.png" alt="GymBeam Logo" class="logo">
-</div>
-
+  <div class="header-container">
+    <div class="menu">
+        <button class="mui-btn" id="loginBtn">Login</button>
+        <button class="mui-btn" id="registerBtn">Register</button>
+    </div>
+    <div class="logo-container">
+        <img src="static/assets/GB_Logo_Energy_sk.png" alt="GymBeam Logo" class="logo">
+    </div>
+  </div>
 <!-- Login Modal -->
 <div id="loginModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content-login">
         <span class="close" id="loginClose">&times;</span>
         <h2>Login</h2>
         <div class="form-container">
@@ -88,20 +89,14 @@
     </div>
 </div>
 
-
-<div id="responseContainer">
-    <h5>LLM Response:</h5>
-    <p id="responseText"></p>
-</div>
-<div class="container-fluid h-100">
+<div class="container-fluid h-100 chat-container">
     <div class="row justify-content-center h-100">
       <div class="col-md-8 col-xl-6 chat">
         <div class="card">
           <div class="card-header msg_head">
             <div class="d-flex bd-highlight">
               <div class="img_cont">
-                <img
-                  src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png"
+                <img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png"
                   class="rounded-circle user_img"
                 />
                 <span class="online_icon"></span>
@@ -125,11 +120,7 @@
                 required
               />
               <div class="input-group-append">
-                <button
-                  type="submit"
-                  id="send"
-                  class="input-group-text send_btn"
-                >
+                <button type="submit" id="send" class="input-group-text send_btn">
                   <i class="fas fa-location-arrow"></i>
                 </button>
               </div>

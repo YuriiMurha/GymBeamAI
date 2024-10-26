@@ -4,6 +4,12 @@ function scrollToBottom() {
 }
 
 $(document).ready(function () {
+    marked.setOptions({
+        breaks: true,         // Line breaks in Markdown
+        gfm: true,            // GitHub flavored markdown
+        sanitize: false,      // Allow HTML (be cautious with this if handling user input)
+    });
+    
     $("#messageArea").on("submit", function (event) {
         event.preventDefault(); // Prevent form from submitting the default way
 
@@ -68,7 +74,7 @@ $(document).ready(function () {
                     result += chunk;
 
                     // Parse result as Markdown using marked.js
-                    const markdownContent = marked.parse(result);
+                    const markdownContent = marked.marked(result);
 
                     // Update the bot response container with the Markdown content
                     $("#" + botResponseId).html(markdownContent + '<span class="msg_time">' + str_time + '</span>');

@@ -62,3 +62,7 @@ class Model:
         print(self._history)
         
         return new_message["content"]
+    
+    def add_survey_data(self, data: str):
+        '''Add user's registration info to history'''
+        self._history.append({ "role": "system", "content": "Here is user's personal information: " + data})
