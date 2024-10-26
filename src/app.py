@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, stream_with_context, Response
+from flask import Flask, render_template, request, stream_with_context, Response, redirect, url_for, session, jsonify
 from model import Model
 from waitress import serve
 from flask_cors import CORS
@@ -9,6 +9,8 @@ CORS(app)
 @app.route('/')
 @app.route('/index')
 def index():
+    if 'username' in session:
+        return redirect(url_for('dashboard'))
     return render_template('index.html')
 
 @app.route('/chat', methods=['POST'])
@@ -21,22 +23,12 @@ def chat():
     
     return Response(generate_response(), content_type='text/event-stream')
 
-
-# Головна сторінка з формами входу та реєстрації
-@app.route('/')
-def index():
-    if 'username' in session:
-        return redirect(url_for('dashboard'))
-    return render_template('index.html')
-
-
 # Сторінка дашборду з опитуванням та GymBeam Assistant
 @app.route('/dashboard')
 def dashboard():
     if 'username' not in session:
         return redirect(url_for('index'))  # Якщо користувач не залогінений, перенаправити на головну сторінку
     return render_template('dashboard.html')
-
 
 # Обробка входу
 @app.route('/login', methods=['POST'])
@@ -94,8 +86,6 @@ def submit_survey():
     model.add_survey_data(survey_data)
     
     return jsonify({'status': 'success'}), 200
-
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
 
 # Тимчасове сховище користувачів
 users = [{'username': 'admin', 'password': 'admin'}]
