@@ -35,26 +35,17 @@ let users = [{ username: 'admin', password: 'admin' }];
 
 // Login functionality
 document.getElementById('submitLogin').addEventListener('click', () => {
-    const username = document.getElementById('loginUsername').value;
-    const password = document.getElementById('loginPassword').value;
-    const rememberMe = document.getElementById('rememberMe').checked;
 
-    const user = users.find(user => user.username === username && user.password === password);
+    alert('Login successful!');
+    document.getElementById('loginModal').style.display = 'none';
+    document.getElementById('chatInput').disabled = false;
+    document.getElementById('submitBtn').disabled = false;
 
-    if (user) {
-        alert('Login successful!');
-        document.getElementById('loginModal').style.display = 'none';
-        document.getElementById('chatInput').disabled = false;
-        document.getElementById('submitBtn').disabled = false;
-
-        if (rememberMe) {
-            localStorage.setItem('loggedInUser', username);
-        }
-
-        window.location.href = "dashboard.html";
-    } else {
-        showError('Invalid credentials.');
+    if (rememberMe) {
+        localStorage.setItem('loggedInUser', username);
     }
+
+    window.location.href = "dashboard.html";
 });
 
 // Registration functionality
@@ -62,15 +53,14 @@ document.getElementById('submitRegister').addEventListener('click', () => {
     const username = document.getElementById('registerUsername').value;
     const password = document.getElementById('registerPassword').value;
     const confirmPassword = document.getElementById('registerConfirmPassword').value;
-    const termsAccepted = document.getElementById('terms').checked;
 
-    if (username && password && confirmPassword && termsAccepted) {
+    //if (username && password && confirmPassword && termsAccepted) {
         if (password !== confirmPassword) {
             showError('Passwords do not match.');
             return;
         }
 
-        const userExists = users.find(user => user.username === username);
+        const userExists = false;// users.find(user => user.username === username);
 
         if (userExists) {
             showError('User already exists.');
@@ -81,34 +71,11 @@ document.getElementById('submitRegister').addEventListener('click', () => {
             showSuccess('Registration successful!');
             document.getElementById('registerModal').style.display = 'none';
         }
-    } else {
-        showError('Please fill in all fields and accept the terms.');
-    }
-});
-
-// Password Strength Indicator
-document.getElementById('registerPassword').addEventListener('input', function() {
-    const password = this.value;
-    let strengthIndicator = document.getElementById('strengthIndicator');
-
-    if (!strengthIndicator) {
-        strengthIndicator = document.createElement('div');
-        strengthIndicator.id = 'strengthIndicator';
-        this.parentElement.appendChild(strengthIndicator);
-    }
-
-    let strength = '';
-    if (password.length < 6) {
-        strength = 'Weak';
-        strengthIndicator.style.color = 'red';
-    } else if (password.length >= 6 && password.length < 10) {
-        strength = 'Moderate';
-        strengthIndicator.style.color = 'orange';
-    } else {
-        strength = 'Strong';
-        strengthIndicator.style.color = 'green';
-    }
-    strengthIndicator.textContent = `Password strength: ${strength}`;
+        
+    window.location.href = "dashboard";
+    //} else {
+    //    showError('Please fill in all fields and accept the terms.');
+    //}
 });
 
 // Error and Success Messages

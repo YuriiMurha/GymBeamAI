@@ -64,25 +64,21 @@
 
 <!-- Register Modal -->
 <div id="registerModal" class="modal">
-    <div class="modal-content">
+    <div class="modal-content-login">
         <span class="close" id="registerClose">&times;</span>
         <h2>Register</h2>
         <div class="form-container">
             <div class="input-icon">
-            <input type="text" id="registerUsername" placeholder="Username">
-                <span class="icon">&#128100;</span> <!-- Icon for username -->
+              <span class="icon">&#128100;</span> <!-- Icon for username -->
+              <input class="text-register" id="registerUsername" placeholder="Username">
             </div>
             <div class="input-icon">
-            <input type="password" id="registerPassword" placeholder="Password">
-                <span class="icon">&#128274;</span> <!-- Icon for password -->
+              <span class="icon">&#128274;</span> <!-- Icon for password -->
+              <input class="text-register" type="password" id="registerPassword" placeholder="Password">
             </div>
             <div class="input-icon">
-                <input type="password" id="registerConfirmPassword" placeholder="Confirm Password">
-                <span class="icon">&#128274;</span> <!-- Icon for password confirmation -->
-            </div>
-            <div class="form-links">
-                <input type="checkbox" id="terms" required>
-                <label for="terms">I agree with <a href="#">Terms of Use</a> and <a href="#">Privacy Policy</a></label>
+              <span class="icon">&#128274;</span> <!-- Icon for password confirmation -->
+              <input class="text-register" type="password" id="registerConfirmPassword" placeholder="Confirm Password">
             </div>
             <button class="mui-btn" id="submitRegister">Submit</button>
         </div>
@@ -91,19 +87,15 @@
 
 <div class="container-fluid h-100 chat-container">
     <div class="row justify-content-center h-100">
-      <div class="col-md-8 col-xl-6 chat">
+      <div class="col-md-11 col-xl-6 chat">
         <div class="card">
           <div class="card-header msg_head">
             <div class="d-flex bd-highlight">
               <div class="img_cont">
-                <img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png"
-                  class="rounded-circle user_img"
-                />
-                <span class="online_icon"></span>
+                <img src="https://storage.googleapis.com/gb_chatbot_files_public/Jim profil.png" class="rounded-circle user_img" alt="Jim's profile picture" /><span class="online_icon"></span>
               </div>
               <div class="user_info">
-                <span>ChatBot</span>
-                <p>Ask me anything!</p>
+                <h1>Jim</h1>
               </div>
             </div>
           </div>

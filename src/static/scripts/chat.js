@@ -38,7 +38,7 @@ $(document).ready(function () {
         // Create a unique placeholder for the bot's response
         const botResponseId = 'botResponse_' + Date.now(); // Unique ID based on timestamp
         var botHtml =
-            '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer" id="' + botResponseId + '">' +
+            '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://storage.googleapis.com/gb_chatbot_files_public/Jim%20profil.png" class="rounded-circle user_img_msg"></div><div class="msg_cotainer" id="' + botResponseId + '">' +
             '<span class="msg_time">' +
             str_time +
             '</span></div></div>';

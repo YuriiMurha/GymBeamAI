@@ -3,15 +3,56 @@
     padding: 20px;
     border: 2px solid gray;
     width: 300px;
-    color: lightgray;
+    color: black;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px black;
+}
+
+.modal {
+    background-color: white;
+}
+
+.text-register {
+    color: black;
+}
+
+.input-icon {
+    display: flex;
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.icon {
+    margin-right: 8px;
+}
+
+
+.checkbox {
+    margin-right: 8px;
+}
+
+#terms {
+    width: 100%;
+}
+
+#registerPassword {
+    background-color: white;
+}
+
+#registerConfirmPassword {
+    background-color: white;
+}
+
+#registerUsername {
+    background-color: white;
 }
 
 .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
     width: 100%;
 }
 
@@ -42,11 +83,11 @@ body,html{
 }
 
 .chat{
-	margin-top: auto;
-	margin-bottom: auto;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 .card{
-	height: 500px;
+	height: 700px;
 	border-radius: 15px !important;
 	background-color: white !important;
 }
@@ -69,44 +110,42 @@ border-radius: 0 0 15px 15px !important;
 .container{
 	align-content: center;
 }
-.search{
-	border-radius: 15px 0 0 15px !important;
-	background-color: white !important;
-	border:0 !important;
-	color: white !important;
-}
-.search:focus{
-	 box-shadow:none !important;
-   outline:0px !important;
-}
 .type_msg{
 	background-color: white !important;
 	border:0 !important;
 	color:black !important;
 	height: 60px !important;
+	border-radius: 15px 0 0 15px !important;
 	overflow-y: auto;
 }
-	.type_msg:focus{
-	 box-shadow:none !important;
-   outline:0px !important;
+.type_msg:focus{
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    outline:0px !important;
 }
 .attach_btn{
 	border-radius: 15px 0 0 15px !important;
-	background-color: rgba(0,0,0,0.3) !important;
+	background-color: black !important;
 	border:0 !important;
 	color: white !important;
 	cursor: pointer;
 }
 .send_btn{
 	border-radius: 0 15px 15px 0 !important;
-	background-color: rgba(0,0,0,0.3) !important;
+	background-color:  lightgray !important;
 	border:0 !important;
 	color: white !important;
 	cursor: pointer;
+    justify-self: center;
+    width: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.send_btn :hover{
+    transform: scale(1.7);
 }
 .search_btn{
 	border-radius: 0 15px 15px 0 !important;
-	background-color: rgba(0,0,0,0.3) !important;
+	background-color: black !important;
 	border:0 !important;
 	color: white !important;
 	cursor: pointer;
@@ -126,14 +165,12 @@ border-radius: 0 0 15px 15px !important;
 .user_img{
 	height: 70px;
 	width: 70px;
-	border:1.5px solid #f5f6fa;
-
+	border:1.5px solid gray;
 }
 .user_img_msg{
 	height: 40px;
 	width: 40px;
-	border:1.5px solid #f5f6fa;
-
+	border:1.5px solid gray;
 }
 .img_cont{
 	position: relative;
@@ -168,7 +205,7 @@ border-radius: 0 0 15px 15px !important;
 }
 .user_info p{
 	font-size: 10px;
-	color: rgba(255,255,255,0.6);
+	color: black;
 }
 .video_cam{
 	margin-left: 50px;
@@ -185,8 +222,8 @@ border-radius: 0 0 15px 15px !important;
 	margin-bottom: auto;
 	margin-left: 10px;
 	border-radius: 25px;
-	background-color: rgb(82, 172, 255);
-	color: white;
+	background-color: rgb(253, 212, 184);
+	color: black;
 	padding: 10px;
 	position: relative;
 }
@@ -195,8 +232,8 @@ border-radius: 0 0 15px 15px !important;
 	margin-bottom: auto;
 	margin-right: 10px;
 	border-radius: 25px;
-	background-color: #58cc71;
-	color: white;
+	background-color: rgb(196, 255, 252);
+	color: black;
 	padding: 10px;
 	position: relative;
 }
