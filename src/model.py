@@ -7,7 +7,7 @@ from google.generativeai.types import GenerateContentResponse
 
 BASE_URL = "http://localhost:5555/v1"
 MODEL_NAME = "gemini-pro"  # Gemini's model name
-API_KEY = 'AIzaSyCqFJJD0F1U-4g4YD1Eec7ycE-t25t52xo' # Your Gemini API key
+API_KEY = 'XXXX' # Your Gemini API key
 
 SYSTEM_RECOMMENDATION = '''system: You MUST respond with a brief intro and a recomendation of a ONE or TWO particular GymBeam products from the LIST of products you were provided.You WILL STRICTLY recommend it by answering with an HTML code of title as a heading text with link property as href, then you MUST ALWAYS add an \"img\" tag STRICTLY with this style <width=\"200\" height=\"200\" style=\"border-radius: 10%; overflow: hidden;\" and then provide a price, description and dosage in bold. After that, provide reasons why this user should buy this product based on his personal health information. Here is the user's personal information about health in format \"age,gender,weight,height,activityLevel,healthCondition,goal,drugUsage,allergies,diet\":'''
 SYSTEM_NOTE = "Please keep your answers short and concise. For plain text you can use both Markdown or HTML notation, but for HTML you MUST use HTML tags, not Markdown monospacecode blocks."
